@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f8f9fc" />
+  
+  <!-- Hospital Building -->
+  <rect x="100" y="200" width="400" height="300" fill="#ffffff" stroke="#4e73df" stroke-width="3" />
+  <rect x="250" y="350" width="100" height="150" fill="#4e73df" />
+  <rect x="270" y="400" width="60" height="100" fill="#ffffff" />
+  
+  <!-- Windows -->
+  <rect x="150" y="250" width="60" height="60" fill="#e8eeff" stroke="#4e73df" stroke-width="2" />
+  <rect x="250" y="250" width="60" height="60" fill="#e8eeff" stroke="#4e73df" stroke-width="2" />
+  <rect x="350" y="250" width="60" height="60" fill="#e8eeff" stroke="#4e73df" stroke-width="2" />
+  
+  <!-- Roof -->
+  <polygon points="100,200 300,100 500,200" fill="#4e73df" />
+  
+  <!-- Medical Cross -->
+  <rect x="600" y="250" width="100" height="200" fill="#e74a3b" rx="10" ry="10" />
+  <rect x="550" y="300" width="200" height="100" fill="#e74a3b" rx="10" ry="10" />
+  
+  <!-- People Silhouettes -->
+  <!-- Doctor -->
+  <circle cx="150" cy="520" r="30" fill="#4e73df" />
+  <rect x="140" y="550" width="20" height="50" fill="#4e73df" />
+  <rect x="120" y="570" width="60" height="10" fill="#4e73df" />
+  <rect x="130" y="600" width="10" height="30" fill="#4e73df" />
+  <rect x="160" y="600" width="10" height="30" fill="#4e73df" />
+  
+  <!-- Patient -->
+  <circle cx="250" cy="520" r="30" fill="#1cc88a" />
+  <rect x="240" y="550" width="20" height="50" fill="#1cc88a" />
+  <rect x="220" y="570" width="60" height="10" fill="#1cc88a" />
+  <rect x="230" y="600" width="10" height="30" fill="#1cc88a" />
+  <rect x="260" y="600" width="10" height="30" fill="#1cc88a" />
+  
+  <!-- NGO Representative -->
+  <circle cx="350" cy="520" r="30" fill="#f6c23e" />
+  <rect x="340" y="550" width="20" height="50" fill="#f6c23e" />
+  <rect x="320" y="570" width="60" height="10" fill="#f6c23e" />
+  <rect x="330" y="600" width="10" height="30" fill="#f6c23e" />
+  <rect x="360" y="600" width="10" height="30" fill="#f6c23e" />
+  
+  <!-- Connecting Lines (representing connections) -->
+  <line x1="180" y1="550" x2="220" y2="550" stroke="#5a5c69" stroke-width="3" stroke-dasharray="5,5" />
+  <line x1="280" y1="550" x2="320" y2="550" stroke="#5a5c69" stroke-width="3" stroke-dasharray="5,5" />
+  
+  <!-- Heart Symbol (representing care) -->
+  <path d="M650,450 C630,430 590,450 650,500 C710,450 670,430 650,450" fill="#e74a3b" />
+  
+  <!-- Sun (representing hope) -->
+  <circle cx="700" cy="150" r="50" fill="#f6c23e" />
+  <line x1="700" y1="80" x2="700" y2="60" stroke="#f6c23e" stroke-width="8" />
+  <line x1="700" y1="220" x2="700" y2="240" stroke="#f6c23e" stroke-width="8" />
+  <line x1="630" y1="150" x2="610" y2="150" stroke="#f6c23e" stroke-width="8" />
+  <line x1="770" y1="150" x2="790" y2="150" stroke="#f6c23e" stroke-width="8" />
+  <line x1="650" y1="100" x2="630" y2="80" stroke="#f6c23e" stroke-width="8" />
+  <line x1="750" y1="200" x2="770" y2="220" stroke="#f6c23e" stroke-width="8" />
+  <line x1="650" y1="200" x2="630" y2="220" stroke="#f6c23e" stroke-width="8" />
+  <line x1="750" y1="100" x2="770" y2="80" stroke="#f6c23e" stroke-width="8" />
+  
+  <!-- Text: CareConnect -->
+  <text x="400" y="50" font-family="Arial" font-size="40" font-weight="bold" fill="#4e73df" text-anchor="middle">CareConnect</text>
+  <text x="400" y="90" font-family="Arial" font-size="20" fill="#5a5c69" text-anchor="middle">Healthcare Support for Everyone</text>
+</svg> 
