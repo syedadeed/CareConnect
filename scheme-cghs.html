@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CGHS - Central Government Health Scheme - CareConnect</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-heartbeat me-2"></i>CareConnect
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#doctors">Doctors</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="schemes.html">Schemes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#ngos">NGOs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#donate">Donate</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#contact">Contact</a>
+                    </li>
+                    <!-- Login/Register button (shown when not logged in) -->
+                    <li class="nav-item" id="login-register-item">
+                        <a class="nav-link btn btn-outline-light ms-2" href="#login">Login / Register</a>
+                    </li>
+                    <!-- User profile dropdown (shown when logged in) -->
+                    <li class="nav-item dropdown" id="user-profile-dropdown" style="display: none;">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-user-circle me-1"></i> <span id="username-display">User</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="index.html#profile">My Profile</a></li>
+                            <li><a class="dropdown-item" href="index.html#medical-records">Medical Records</a></li>
+                            <li><a class="dropdown-item" href="index.html#appointments">Appointments</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#" id="logout-button">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Scheme Header -->
+    <header class="py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                            <li class="breadcrumb-item"><a href="schemes.html">Healthcare Schemes</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">CGHS</li>
+                        </ol>
+                    </nav>
+                    <h1 class="display-4 fw-bold">Central Government Health Scheme <span class="badge bg-success">Government</span></h1>
+                    <p class="lead">Comprehensive healthcare for central government employees, pensioners and their dependents</p>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <div class="scheme-logo">
+                        <i class="fas fa-user-shield fa-5x text-primary"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Scheme Details -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h2 class="card-title">About CGHS</h2>
+                            <p>The Central Government Health Scheme (CGHS) was started in 1954 with the objective of providing comprehensive healthcare facilities to Central Government employees, pensioners and their dependents residing in CGHS covered cities.</p>
+                            
+                            <p>Currently, CGHS facilities are available in 75 cities through more than 350 Wellness Centers/polyclinics across India. The scheme provides both outpatient care and hospitalization facilities.</p>
+                            
+                            <h3 class="mt-4">Key Features</h3>
+                            <ul>
+                                <li>Comprehensive medical care including OPD treatment and hospitalization</li>
+                                <li>Access to both modern and traditional systems of medicine</li>
+                                <li>Cashless treatment in empanelled private hospitals</li>
+                                <li>Reimbursement of expenses for treatment in government hospitals</li>
+                                <li>Online appointment system for OPD consultations</li>
+                                <li>Teleconsultation services available</li>
+                                <li>Doorstep delivery of medicines for chronic diseases</li>
+                                <li>Health education and wellness programs</li>
+                            </ul>
+                            
+                            <h3 class="mt-4">Eligibility Criteria</h3>
+                            <p>The following categories of persons are eligible for CGHS coverage:</p>
+                            <ul>
+                                <li>All central government employees paid from central civil estimates</li>
+                                <li>Central government pensioners receiving pension from central civil estimates</li>
+                                <li>Members of Parliament</li>
+                                <li>Ex-Members of Parliament</li>
+                                <li>Judges of Supreme Court and High Courts</li>
+                                <li>Freedom fighters</li>
+                                <li>Employees and pensioners of certain autonomous bodies covered under CGHS</li>
+                                <li>Accredited journalists</li>
+                                <li>Dependent family members of all the above categories</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h2 class="card-title">Services Offered</h2>
+                            
+                            <h4 class="mt-4">OPD Services</h4>
+                            <div class="row mt-3">
+                                <div class="col-md-6">
+                                    <div class="d-flex mb-3">
+                                        <div class="me-3">
+                                            <i class="fas fa-stethoscope fa-2x text-primary"></i>
+                                        </div>
+                                        <div>
+                                            <h5>General Medicine</h5>
+                                            <p>Consultation with physicians for general health concerns and chronic conditions.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="d-flex mb-3">
+                                        <div class="me-3">
+                                            <i class="fas fa-teeth fa-2x text-primary"></i>
+                                        </div>
+                                        <div>
+                                            <h5>Dental Care</h5>
+                                            <p>Comprehensive dental services including check-ups, fillings, extractions, and more.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="d-flex mb-3">
+                                        <div class="me-3">
+                                            <i class="fas fa-eye fa-2x text-primary"></i>
+                                        </div>
+                                        <div>
+                                            <h5>Eye Care</h5>
+                                            <p>Vision testing, eye examinations, and treatment for eye conditions.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="d-flex mb-3">
+                                        <div class="me-3">
+                                            <i class="fas fa-heartbeat fa-2x text-primary"></i>
+                                        </div>
+                                        <div>
+                                            <h5>Specialist Consultation</h5>
+                                            <p>Access to specialists in cardiology, neurology, orthopedics, and more.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <h4 class="mt-4">Alternative Medicine</h4>
+                            <div class="row mt-3">
+                                <div class="col-md-6">
+                                    <div class="d-flex mb-3">
+                                        <div class="me-3">
+                                            <i class="fas fa-spa fa-2x text-success"></i>
+                                        </div>
+                                        <div>
+                                            <h5>Ayurveda</h5>
+                                            <p>Traditional Indian system of medicine focusing on holistic healing.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="d-flex mb-3">
+                                        <div class="me-3">
+                                            <i class="fas fa-hand-holding-medical fa-2x text-success"></i>
+                                        </div>
+                                        <div>
+                                            <h5>Homeopathy</h5>
+                                            <p>Alternative medicine based on the principle of "like cures like".</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="d-flex mb-3">
+                                        <div class="me-3">
+                                            <i class="fas fa-bone fa-2x text-success"></i>
+                                        </div>
+                                        <div>
+                                            <h5>Yoga</h5>
+                                            <p>Physical, mental, and spiritual practices for overall well-being.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="d-flex mb-3">
+                                        <div class="me-3">
+                                            <i class="fas fa-seedling fa-2x text-success"></i>
+                                        </div>
+                                        <div>
+                                            <h5>Unani</h5>
+                                            <p>Traditional medicine system based on the teachings of Hippocrates and Galen.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <h4 class="mt-4">Hospitalization</h4>
+                            <p>CGHS beneficiaries are entitled to cashless treatment in empanelled private hospitals for approved procedures. The scheme covers room charges, consultation fees, investigation charges, implants, and all other services provided by the hospital.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="card-title">How to Apply</h2>
+                            <p>To apply for a CGHS card, eligible beneficiaries need to follow these steps:</p>
+                            
+                            <ol class="mt-3">
+                                <li class="mb-3">
+                                    <h5>Download the Application Form</h5>
+                                    <p>Download and print the CGHS application form from the official CGHS website.</p>
+                                </li>
+                                <li class="mb-3">
+                                    <h5>Fill the Application Form</h5>
+                                    <p>Complete the application form with all required details. Ensure all information is accurate and complete.</p>
+                                </li>
+                                <li class="mb-3">
+                                    <h5>Attach Required Documents</h5>
+                                    <p>Attach necessary documents such as:</p>
+                                    <ul>
+                                        <li>Proof of identity (Aadhaar Card/PAN Card/Voter ID)</li>
+                                        <li>Proof of residence</li>
+                                        <li>Recent passport-sized photographs</li>
+                                        <li>Pay slip or pension payment order</li>
+                                        <li>Proof of relationship for dependent family members</li>
+                                    </ul>
+                                </li>
+                                <li class="mb-3">
+                                    <h5>Submit the Application</h5>
+                                    <p>Submit the completed application form along with all documents to your department or the nearest CGHS office.</p>
+                                </li>
+                                <li>
+                                    <h5>Collect CGHS Card</h5>
+                                    <p>Once approved, collect your CGHS card from the designated office. The card will contain details of all registered family members.</p>
+                                </li>
+                            </ol>
+                            
+                            <div class="alert alert-info mt-3">
+                                <i class="fas fa-info-circle me-2"></i> For more information and to download application forms, visit the official CGHS website or contact your nearest CGHS Wellness Centre.
+                            </div>
+                            
+                            <div class="mt-4">
+                                <a href="https://cghs.gov.in/" target="_blank" class="btn btn-primary me-2">
+                                    <i class="fas fa-external-link-alt me-1"></i> Official Website
+                                </a>
+                                <a href="index.html#contact" class="btn btn-outline-primary">
+                                    <i class="fas fa-question-circle me-1"></i> Get Assistance
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="card mb-4 sticky-top" style="top: 90px; z-index: 1;">
+                        <div class="card-body">
+                            <h4 class="card-title">Quick Facts</h4>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <span><i class="fas fa-calendar-alt text-primary me-2"></i> Established</span>
+                                    <span class="fw-bold">1954</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <span><i class="fas fa-map-marker-alt text-danger me-2"></i> Cities Covered</span>
+                                    <span class="fw-bold">75</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <span><i class="fas fa-clinic-medical text-success me-2"></i> Wellness Centers</span>
+                                    <span class="fw-bold">350+</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <span><i class="fas fa-building text-info me-2"></i> Empanelled Hospitals</span>
+                                    <span class="fw-bold">1000+</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <span><i class="fas fa-phone text-warning me-2"></i> Helpline</span>
+                                    <span class="fw-bold">1800-208-7128</span>
+                                </li>
+                            </ul>
+                            
+                            <div class="alert alert-success mt-3">
+                                <i class="fas fa-check-circle me-2"></i> Valid across all CGHS-covered cities in India
+                            </div>
+                            
+                            <div class="d-grid gap-2 mt-3">
+                                <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#nearestCenterModal">
+                                    <i class="fas fa-map-marked-alt me-1"></i> Find Nearest Center
+                                </a>
+                                <a href="https://cghs.nic.in/index.php?lang=1" target="_blank" class="btn btn-outline-primary">
+                                    <i class="fas fa-calendar-check me-1"></i> Online Appointment
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h4 class="card-title">Contribution Rates</h4>
+                            <p class="small text-muted">Monthly contribution rates for CGHS card (w.e.f. 01.01.2022)</p>
+                            
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th>Pay Level</th>
+                                            <th>Monthly Contribution (₹)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Level 1-5</td>
+                                            <td>250</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Level 6</td>
+                                            <td>450</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Level 7-11</td>
+                                            <td>650</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Level 12 & above</td>
+                                            <td>1000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Pensioners</td>
+                                            <td>Based on pension amount</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p class="small text-muted mt-2">* Contribution is deducted from salary/pension</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h4 class="card-title">Important Downloads</h4>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <a href="#" class="text-decoration-none">
+                                        <i class="fas fa-file-pdf text-danger me-2"></i> Application Form
+                                    </a>
+                                </li>
+                                <li class="list-group-item">
+                                    <a href="#" class="text-decoration-none">
+                                        <i class="fas fa-file-pdf text-danger me-2"></i> List of Empanelled Hospitals
+                                    </a>
+                                </li>
+                                <li class="list-group-item">
+                                    <a href="#" class="text-decoration-none">
+                                        <i class="fas fa-file-pdf text-danger me-2"></i> Rate List for Procedures
+                                    </a>
+                                </li>
+                                <li class="list-group-item">
+                                    <a href="#" class="text-decoration-none">
+                                        <i class="fas fa-file-pdf text-danger me-2"></i> CGHS Guidelines
+                                    </a>
+                                </li>
+                                <li class="list-group-item">
+                                    <a href="#" class="text-decoration-none">
+                                        <i class="fas fa-file-pdf text-danger me-2"></i> Medicine Formulary
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nearest Center Modal -->
+    <div class="modal fade" id="nearestCenterModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Find Nearest CGHS Center</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="center-search-form">
+                        <div class="mb-3">
+                            <label for="city-select" class="form-label">Select City</label>
+                            <select class="form-select" id="city-select" required>
+                                <option value="">Select a city</option>
+                                <option value="delhi">Delhi</option>
+                                <option value="mumbai">Mumbai</option>
+                                <option value="chennai">Chennai</option>
+                                <option value="kolkata">Kolkata</option>
+                                <option value="bangalore">Bangalore</option>
+                                <option value="hyderabad">Hyderabad</option>
+                                <option value="pune">Pune</option>
+                                <option value="other">Other Cities</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="center-type" class="form-label">Center Type</label>
+                            <select class="form-select" id="center-type">
+                                <option value="all">All Centers</option>
+                                <option value="allopathic">Allopathic</option>
+                                <option value="ayurvedic">Ayurvedic</option>
+                                <option value="homeopathic">Homeopathic</option>
+                                <option value="unani">Unani</option>
+                                <option value="yoga">Yoga</option>
+                            </select>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary">Find Centers</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <p class="small text-muted w-100 text-center mb-0">For complete list of centers, visit the <a href="https://cghs.gov.in/" target="_blank">official website</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h4 class="mb-4"><i class="fas fa-heartbeat me-2"></i>CareConnect</h4>
+                    <p>Connecting people in need with healthcare resources, retired doctors, and NGOs to provide accessible healthcare support for everyone.</p>
+                    <div class="social-icons mt-3">
+                        <a href="#" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="mb-4">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html#home" class="text-white text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="index.html#services" class="text-white text-decoration-none">Services</a></li>
+                        <li class="mb-2"><a href="index.html#doctors" class="text-white text-decoration-none">Doctors</a></li>
+                        <li class="mb-2"><a href="schemes.html" class="text-white text-decoration-none">Schemes</a></li>
+                        <li class="mb-2"><a href="index.html#ngos" class="text-white text-decoration-none">NGOs</a></li>
+                        <li class="mb-2"><a href="index.html#donate" class="text-white text-decoration-none">Donate</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="mb-4">Resources</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Blog</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">FAQ</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Privacy Policy</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <h5 class="mb-4">Newsletter</h5>
+                    <p>Subscribe to our newsletter for updates on healthcare schemes and resources.</p>
+                    <form class="mt-3">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Your email" required>
+                            <button class="btn btn-primary" type="submit">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2024 CareConnect. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Main JavaScript -->
+    <script src="js/data.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/app.js"></script>
+    
+    <!-- Scheme-specific script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check user login status
+            checkUserLoginStatus();
+            
+            // Handle center search form submission
+            const centerSearchForm = document.getElementById('center-search-form');
+            
+            if (centerSearchForm) {
+                centerSearchForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const city = document.getElementById('city-select').value;
+                    const centerType = document.getElementById('center-type').value;
+                    
+                    // In a real app, this would redirect to a search results page or show results in the modal
+                    alert(`Searching for ${centerType === 'all' ? 'all types of' : centerType} CGHS centers in ${city}. This feature will be available soon.`);
+                    
+                    // Close the modal
+                    const modal = bootstrap.Modal.getInstance(document.getElementById('nearestCenterModal'));
+                    if (modal) {
+                        modal.hide();
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html> 

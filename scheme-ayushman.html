@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayushman Bharat - CareConnect</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-heartbeat me-2"></i>CareConnect
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#doctors">Doctors</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="schemes.html">Schemes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#ngos">NGOs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#donate">Donate</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#contact">Contact</a>
+                    </li>
+                    <!-- Login/Register button (shown when not logged in) -->
+                    <li class="nav-item" id="login-register-item">
+                        <a class="nav-link btn btn-outline-light ms-2" href="#login">Login / Register</a>
+                    </li>
+                    <!-- User profile dropdown (shown when logged in) -->
+                    <li class="nav-item dropdown" id="user-profile-dropdown" style="display: none;">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-user-circle me-1"></i> <span id="username-display">User</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="index.html#profile">My Profile</a></li>
+                            <li><a class="dropdown-item" href="index.html#medical-records">Medical Records</a></li>
+                            <li><a class="dropdown-item" href="index.html#appointments">Appointments</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#" id="logout-button">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Scheme Header -->
+    <header class="py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                            <li class="breadcrumb-item"><a href="schemes.html">Healthcare Schemes</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Ayushman Bharat</li>
+                        </ol>
+                    </nav>
+                    <h1 class="display-4 fw-bold">Ayushman Bharat <span class="badge bg-success">Government</span></h1>
+                    <p class="lead">National Health Protection Scheme providing health coverage to economically vulnerable families</p>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <div class="scheme-logo">
+                        <i class="fas fa-hospital-user fa-5x text-primary"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Scheme Details -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h2 class="card-title">About Ayushman Bharat</h2>
+                            <p>Ayushman Bharat - Pradhan Mantri Jan Arogya Yojana (PM-JAY) is the largest government-funded healthcare program in the world, aimed at providing free access to healthcare for low-income people in India. The scheme covers secondary and tertiary care hospitalization expenses of up to ₹5 lakh per family per year.</p>
+                            
+                            <h3 class="mt-4">Key Features</h3>
+                            <ul>
+                                <li>Coverage of up to ₹5 lakh per family per year</li>
+                                <li>Cashless and paperless access to quality healthcare services</li>
+                                <li>Covers pre and post-hospitalization expenses</li>
+                                <li>No restrictions on family size, age, or gender</li>
+                                <li>Covers all pre-existing conditions from day one</li>
+                                <li>Portable across all empanelled hospitals in India</li>
+                                <li>1,350+ medical packages covering surgery, medical treatment, diagnostics, and day care treatments</li>
+                            </ul>
+                            
+                            <h3 class="mt-4">Eligibility Criteria</h3>
+                            <p>Families included in the SECC (Socio-Economic Caste Census) database are eligible for the scheme. The general criteria include:</p>
+                            <ul>
+                                <li>Families listed in the SECC database with identified deprivations</li>
+                                <li>Currently entitled rural families</li>
+                                <li>Urban worker families as per defined criteria</li>
+                                <li>No cap on family size and age of members</li>
+                            </ul>
+                            
+                            <h3 class="mt-4">How to Apply</h3>
+                            <p>To benefit from the Ayushman Bharat scheme, eligible candidates need to follow these steps:</p>
+                            <ol>
+                                <li>Check eligibility online or through nearest Common Service Center</li>
+                                <li>Visit the nearest Ayushman Bharat empanelled hospital with required identification</li>
+                                <li>Complete verification process through Aadhaar or other acceptable ID proof</li>
+                                <li>Get the Ayushman Card generated</li>
+                                <li>Access healthcare services at any empanelled hospital across India</li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h2 class="card-title">Covered Treatments</h2>
+                            <p>Ayushman Bharat covers a wide range of medical and surgical procedures including:</p>
+                            
+                            <div class="row mt-4">
+                                <div class="col-md-6">
+                                    <h5>Medical Specialties</h5>
+                                    <ul>
+                                        <li>General Medicine</li>
+                                        <li>Cardiology</li>
+                                        <li>Neurology</li>
+                                        <li>Oncology</li>
+                                        <li>Pulmonology</li>
+                                        <li>Nephrology</li>
+                                        <li>Gastroenterology</li>
+                                        <li>Pediatrics</li>
+                                        <li>Infectious Diseases</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <h5>Surgical Procedures</h5>
+                                    <ul>
+                                        <li>Cardiothoracic Surgery</li>
+                                        <li>Neurosurgery</li>
+                                        <li>Ophthalmology</li>
+                                        <li>Orthopedics</li>
+                                        <li>ENT Procedures</li>
+                                        <li>General Surgery</li>
+                                        <li>Gynecology</li>
+                                        <li>Urology</li>
+                                        <li>Plastic Surgery (for burns and injuries)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="card-title">Empanelled Hospitals</h2>
+                            <p>The scheme has empanelled thousands of public and private hospitals across India. Beneficiaries can avail treatment at any of these hospitals. All empanelled hospitals display the Ayushman Bharat logo for easy identification.</p>
+                            
+                            <div class="alert alert-info mt-3">
+                                <i class="fas fa-info-circle me-2"></i> To find empanelled hospitals near you, visit the official Ayushman Bharat website or call the toll-free helpline at 14555.
+                            </div>
+                            
+                            <div class="mt-4">
+                                <a href="https://pmjay.gov.in/" target="_blank" class="btn btn-primary me-2">
+                                    <i class="fas fa-external-link-alt me-1"></i> Official Website
+                                </a>
+                                <a href="#" class="btn btn-outline-primary">
+                                    <i class="fas fa-question-circle me-1"></i> Get Assistance
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="card mb-4 sticky-top" style="top: 90px; z-index: 1;">
+                        <div class="card-body">
+                            <h4 class="card-title">Quick Facts</h4>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <span><i class="fas fa-money-bill-wave text-success me-2"></i> Coverage Amount</span>
+                                    <span class="fw-bold">₹5 lakh per family per year</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <span><i class="fas fa-users text-primary me-2"></i> Target Beneficiaries</span>
+                                    <span class="fw-bold">10.74 crore families</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <span><i class="fas fa-hospital text-danger me-2"></i> Empanelled Hospitals</span>
+                                    <span class="fw-bold">25,000+</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <span><i class="fas fa-stethoscope text-info me-2"></i> Medical Packages</span>
+                                    <span class="fw-bold">1,350+</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <span><i class="fas fa-phone text-warning me-2"></i> Helpline</span>
+                                    <span class="fw-bold">14555 / 1800-111-565</span>
+                                </li>
+                            </ul>
+                            
+                            <div class="alert alert-success mt-3">
+                                <i class="fas fa-check-circle me-2"></i> Completely free for eligible beneficiaries
+                            </div>
+                            
+                            <div class="d-grid gap-2 mt-3">
+                                <a href="#eligibility-check" class="btn btn-primary">
+                                    <i class="fas fa-search me-1"></i> Check Eligibility
+                                </a>
+                                <a href="index.html#contact" class="btn btn-outline-primary">
+                                    <i class="fas fa-headset me-1"></i> Get Support
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h4 class="card-title">Required Documents</h4>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><i class="fas fa-id-card text-primary me-2"></i> Aadhaar Card</li>
+                                <li class="list-group-item"><i class="fas fa-address-card text-primary me-2"></i> Ration Card</li>
+                                <li class="list-group-item"><i class="fas fa-image text-primary me-2"></i> Recent Passport Size Photo</li>
+                                <li class="list-group-item"><i class="fas fa-mobile-alt text-primary me-2"></i> Mobile Number</li>
+                                <li class="list-group-item"><i class="fas fa-home text-primary me-2"></i> Proof of Residence</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Eligibility Check -->
+    <section id="eligibility-check" class="py-5 bg-light">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card shadow">
+                        <div class="card-body">
+                            <h2 class="card-title text-center mb-4">Check Your Eligibility</h2>
+                            <form id="eligibility-form">
+                                <div class="mb-3">
+                                    <label for="state" class="form-label">State</label>
+                                    <select id="state" class="form-select" required>
+                                        <option value="">Select State</option>
+                                        <option value="delhi">Delhi</option>
+                                        <option value="maharashtra">Maharashtra</option>
+                                        <option value="karnataka">Karnataka</option>
+                                        <option value="tamil-nadu">Tamil Nadu</option>
+                                        <option value="uttar-pradesh">Uttar Pradesh</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="district" class="form-label">District</label>
+                                    <select id="district" class="form-select" required>
+                                        <option value="">Select District</option>
+                                    </select>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label for="ration-card" class="form-label">Ration Card Number</label>
+                                        <input type="text" class="form-control" id="ration-card" placeholder="Enter Ration Card Number">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="mobile" class="form-label">Mobile Number</label>
+                                        <input type="tel" class="form-control" id="mobile" placeholder="Enter Mobile Number" required>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">Full Name (as in Ration Card)</label>
+                                    <input type="text" class="form-control" id="name" placeholder="Enter Full Name" required>
+                                </div>
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-primary">Check Eligibility</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h4 class="mb-4"><i class="fas fa-heartbeat me-2"></i>CareConnect</h4>
+                    <p>Connecting people in need with healthcare resources, retired doctors, and NGOs to provide accessible healthcare support for everyone.</p>
+                    <div class="social-icons mt-3">
+                        <a href="#" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="mb-4">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html#home" class="text-white text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="index.html#services" class="text-white text-decoration-none">Services</a></li>
+                        <li class="mb-2"><a href="index.html#doctors" class="text-white text-decoration-none">Doctors</a></li>
+                        <li class="mb-2"><a href="schemes.html" class="text-white text-decoration-none">Schemes</a></li>
+                        <li class="mb-2"><a href="index.html#ngos" class="text-white text-decoration-none">NGOs</a></li>
+                        <li class="mb-2"><a href="index.html#donate" class="text-white text-decoration-none">Donate</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="mb-4">Resources</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Blog</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">FAQ</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Privacy Policy</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <h5 class="mb-4">Newsletter</h5>
+                    <p>Subscribe to our newsletter for updates on healthcare schemes and resources.</p>
+                    <form class="mt-3">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Your email" required>
+                            <button class="btn btn-primary" type="submit">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2024 CareConnect. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Main JavaScript -->
+    <script src="js/data.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/app.js"></script>
+    
+    <!-- Scheme-specific script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check user login status
+            checkUserLoginStatus();
+            
+            // Handle state-district dependency
+            const stateSelect = document.getElementById('state');
+            const districtSelect = document.getElementById('district');
+            
+            const districtsByState = {
+                'delhi': ['Central Delhi', 'East Delhi', 'New Delhi', 'North Delhi', 'North East Delhi', 'North West Delhi', 'South Delhi', 'South West Delhi', 'West Delhi'],
+                'maharashtra': ['Mumbai', 'Pune', 'Nagpur', 'Thane', 'Nashik'],
+                'karnataka': ['Bangalore', 'Mysore', 'Hubli', 'Mangalore', 'Belgaum'],
+                'tamil-nadu': ['Chennai', 'Coimbatore', 'Madurai', 'Tiruchirappalli', 'Salem'],
+                'uttar-pradesh': ['Lucknow', 'Kanpur', 'Ghaziabad', 'Agra', 'Varanasi', 'Meerut']
+            };
+            
+            stateSelect.addEventListener('change', function() {
+                const selectedState = this.value;
+                
+                // Clear district options
+                districtSelect.innerHTML = '<option value="">Select District</option>';
+                
+                if (selectedState && districtsByState[selectedState]) {
+                    // Add new options
+                    districtsByState[selectedState].forEach(district => {
+                        const option = document.createElement('option');
+                        option.value = district.toLowerCase().replace(' ', '-');
+                        option.textContent = district;
+                        districtSelect.appendChild(option);
+                    });
+                }
+            });
+            
+            // Handle form submission
+            const eligibilityForm = document.getElementById('eligibility-form');
+            
+            if (eligibilityForm) {
+                eligibilityForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // In a real app, you would send this data to a server for validation
+                    alert('Thank you for submitting your information. Our team will verify your eligibility and contact you within 24-48 hours.');
+                    
+                    // Reset the form
+                    this.reset();
+                });
+            }
+        });
+    </script>
+</body>
+</html> 

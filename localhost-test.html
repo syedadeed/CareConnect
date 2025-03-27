@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Test (Localhost)</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
+        .container { max-width: 800px; margin: 0 auto; }
+        pre { background: #f4f4f4; padding: 10px; border-radius: 5px; overflow: auto; }
+        .success { color: green; }
+        .error { color: red; }
+        button { padding: 8px 16px; background: #4CAF50; color: white; border: none; cursor: pointer; margin: 5px; }
+        input { padding: 8px; margin: 5px 0; }
+        .form-group { margin-bottom: 15px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CareConnect API Test</h1>
+        <p>This page tests the connection to the backend API server running on localhost:3000</p>
+        
+        <div id="server-status">
+            <h2>1. Server Connection Test</h2>
+            <button id="test-connection">Test Connection</button>
+            <div id="connection-result"></div>
+        </div>
+        
+        <div id="registration-test">
+            <h2>2. Registration Test</h2>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" value="Test User">
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" value="test@example.com">
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" value="password123">
+            </div>
+            <button id="register-button">Register User</button>
+            <div id="register-result"></div>
+        </div>
+        
+        <div id="login-test">
+            <h2>3. Login Test</h2>
+            <div class="form-group">
+                <label for="login-email">Email:</label>
+                <input type="email" id="login-email" value="test@example.com">
+            </div>
+            <div class="form-group">
+                <label for="login-password">Password:</label>
+                <input type="password" id="login-password" value="password123">
+            </div>
+            <button id="login-button">Login User</button>
+            <div id="login-result"></div>
+        </div>
+    </div>
+
+    <script>
+        // API base URL - the Node.js server
+        const API_URL = 'http://127.0.0.1:3000/api';
+
+        // Function to display results
+        function displayResult(elementId, result, isError = false) {
+            const element = document.getElementById(elementId);
+            const className = isError ? 'error' : 'success';
+            
+            if (typeof result === 'object') {
+                element.innerHTML = `<pre class="${className}">${JSON.stringify(result, null, 2)}</pre>`;
+            } else {
+                element.innerHTML = `<p class="${className}">${result}</p>`;
+            }
+        }
+
+        // Test server connection
+        document.getElementById('test-connection').addEventListener('click', async () => {
+            const resultElement = document.getElementById('connection-result');
+            resultElement.innerHTML = '<p>Testing connection...</p>';
+            
+            try {
+                const response = await fetch(`${API_URL}/auth/register`, {
+                    method: 'OPTIONS',
+                    mode: 'cors'
+                });
+                
+                displayResult('connection-result', {
+                    status: response.status,
+                    statusText: response.statusText,
+                    headers: Object.fromEntries([...response.headers]),
+                    message: 'Server is reachable! CORS is properly configured.'
+                });
+            } catch (error) {
+                displayResult('connection-result', `Error: ${error.message}`, true);
+                console.error('Connection error:', error);
+            }
+        });
+
+        // Register user
+        document.getElementById('register-button').addEventListener('click', async () => {
+            const resultElement = document.getElementById('register-result');
+            resultElement.innerHTML = '<p>Sending registration request...</p>';
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            try {
+                const response = await fetch(`${API_URL}/auth/register`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ name, email, password }),
+                    mode: 'cors'
+                });
+                
+                const data = await response.json();
+                displayResult('register-result', data);
+            } catch (error) {
+                displayResult('register-result', `Error: ${error.message}`, true);
+                console.error('Registration error:', error);
+            }
+        });
+
+        // Login user
+        document.getElementById('login-button').addEventListener('click', async () => {
+            const resultElement = document.getElementById('login-result');
+            resultElement.innerHTML = '<p>Sending login request...</p>';
+            
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+            
+            try {
+                const response = await fetch(`${API_URL}/auth/login`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ email, password }),
+                    mode: 'cors'
+                });
+                
+                const data = await response.json();
+                displayResult('login-result', data);
+            } catch (error) {
+                displayResult('login-result', `Error: ${error.message}`, true);
+                console.error('Login error:', error);
+            }
+        });
+    </script>
+</body>
+</html> 

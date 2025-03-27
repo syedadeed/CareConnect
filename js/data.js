@@ -4,29 +4,29 @@ window.appData = {
     doctors: [
         {
             id: 1,
-            name: "Dr. Shriyesh",
-            specialty: "General Physician",
-            description: "Retired physician with 30 years of experience, offering free consultations for basic healthcare needs.",
+            name: "Dr. Shaurya",
+            specialty: "Neuro Surgeon",
+            description: "Neuro Surgeon with 3 years of experience, offering free consultations for basic healthcare needs.",
             image: "",
-            email: "rajesh.sharma@example.com",
+            email: "shaurya.sharma@example.com",
             phone: "+91 600000000",
             linkedin: "https://linkedin.com/in/example",
             availability: "Mon, Wed, Fri (10 AM - 2 PM)",
             languages: ["English", "Hindi"],
-            experience: "30+ years"
+            experience: "3+ years"
         },
         {
             id: 2,
-            name: "Dr. Priya Patel",
+            name: "Dr. Shreya Sharma",
             specialty: "Pediatrician",
             description: "Specialized in children's healthcare with a focus on preventive care and childhood development.",
             image: "",
-            email: "priya.patel@example.com",
+            email: "shreya.sharma@example.com",
             phone: "+91 9876543211",
             linkedin: "https://linkedin.com/in/example",
             availability: "Tue, Thu (9 AM - 5 PM)",
             languages: ["English", "Hindi", "Gujarati"],
-            experience: "25 years"
+            experience: "2+ years"
         },
         {
             id: 3,

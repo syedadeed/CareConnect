@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Schemes - CareConnect</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .scheme-card {
+            transition: transform 0.3s;
+            height: 100%;
+        }
+        .scheme-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .scheme-icon {
+            font-size: 2.5rem;
+            color: #0d6efd;
+            margin-bottom: 1rem;
+        }
+        .badge-corner {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-heartbeat me-2"></i>CareConnect
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#doctors">Doctors</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="schemes.html">Schemes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#ngos">NGOs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#donate">Donate</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#contact">Contact</a>
+                    </li>
+                    <!-- Login/Register button (shown when not logged in) -->
+                    <li class="nav-item" id="login-register-item">
+                        <a class="nav-link btn btn-outline-light ms-2" href="index.html#login">Login / Register</a>
+                    </li>
+                    <!-- User profile dropdown (shown when logged in) -->
+                    <li class="nav-item dropdown" id="user-profile-dropdown" style="display: none;">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-user-circle me-1"></i> <span id="username-display">User</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="index.html#profile">My Profile</a></li>
+                            <li><a class="dropdown-item" href="index.html#medical-records">Medical Records</a></li>
+                            <li><a class="dropdown-item" href="index.html#appointments">Appointments</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#" id="logout-button">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Healthcare Schemes Header -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h1 class="display-4 fw-bold">Healthcare Schemes</h1>
+                <p class="lead">Government and private healthcare assistance programs to help you access quality healthcare</p>
+            </div>
+            
+            <!-- Search and Filter -->
+            <div class="row mb-5">
+                <div class="col-md-8 mx-auto">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" placeholder="Search schemes..." id="scheme-search">
+                                </div>
+                                <div class="col-md-4">
+                                    <select class="form-select" id="scheme-filter">
+                                        <option value="all">All Categories</option>
+                                        <option value="government">Government Schemes</option>
+                                        <option value="private">Private Schemes</option>
+                                        <option value="insurance">Insurance Programs</option>
+                                        <option value="free">Free Treatment</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-2">
+                                    <button class="btn btn-primary w-100" id="search-btn">Search</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Schemes Grid -->
+            <div class="row g-4" id="schemes-grid">
+                <!-- Ayushman Bharat -->
+                <div class="col-lg-4 col-md-6 mb-4" data-category="government free">
+                    <a href="scheme-ayushman.html" class="text-decoration-none text-dark">
+                        <div class="card scheme-card shadow-sm h-100">
+                            <div class="badge-corner">
+                                <span class="badge bg-success">Government</span>
+                            </div>
+                            <div class="card-body text-center">
+                                <div class="scheme-icon">
+                                    <i class="fas fa-hospital-user"></i>
+                                </div>
+                                <h3 class="card-title">Ayushman Bharat</h3>
+                                <p class="card-text">National health protection scheme covering healthcare costs up to ₹5 lakh per family annually for secondary and tertiary care hospitalization.</p>
+                                <div class="d-flex justify-content-between align-items-center mt-3">
+                                    <span class="text-muted">Eligibility: Low-income families</span>
+                                    <button class="btn btn-sm btn-outline-primary">Learn More</button>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- CGHS -->
+                <div class="col-lg-4 col-md-6 mb-4" data-category="government">
+                    <a href="scheme-cghs.html" class="text-decoration-none text-dark">
+                        <div class="card scheme-card shadow-sm h-100">
+                            <div class="badge-corner">
+                                <span class="badge bg-success">Government</span>
+                            </div>
+                            <div class="card-body text-center">
+                                <div class="scheme-icon">
+                                    <i class="fas fa-user-shield"></i>
+                                </div>
+                                <h3 class="card-title">CGHS</h3>
+                                <p class="card-text">Central Government Health Scheme providing comprehensive medical care to central government employees, pensioners and their dependents.</p>
+                                <div class="d-flex justify-content-between align-items-center mt-3">
+                                    <span class="text-muted">Eligibility: Government employees</span>
+                                    <button class="btn btn-sm btn-outline-primary">Learn More</button>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- PM-JAY -->
+                <div class="col-lg-4 col-md-6 mb-4" data-category="government free">
+                    <a href="scheme-pmjay.html" class="text-decoration-none text-dark">
+                        <div class="card scheme-card shadow-sm h-100">
+                            <div class="badge-corner">
+                                <span class="badge bg-success">Government</span>
+                            </div>
+                            <div class="card-body text-center">
+                                <div class="scheme-icon">
+                                    <i class="fas fa-hand-holding-medical"></i>
+                                </div>
+                                <h3 class="card-title">PM-JAY</h3>
+                                <p class="card-text">Pradhan Mantri Jan Arogya Yojana offering health insurance coverage of up to ₹5 lakh per family for secondary and tertiary care.</p>
+                                <div class="d-flex justify-content-between align-items-center mt-3">
+                                    <span class="text-muted">Eligibility: Economically vulnerable</span>
+                                    <button class="btn btn-sm btn-outline-primary">Learn More</button>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- ESI Scheme -->
+                <div class="col-lg-4 col-md-6 mb-4" data-category="government insurance">
+                    <a href="scheme-esi.html" class="text-decoration-none text-dark">
+                        <div class="card scheme-card shadow-sm h-100">
+                            <div class="badge-corner">
+                                <span class="badge bg-success">Government</span>
+                            </div>
+                            <div class="card-body text-center">
+                                <div class="scheme-icon">
+                                    <i class="fas fa-building-shield"></i>
+                                </div>
+                                <h3 class="card-title">ESI Scheme</h3>
+                                <p class="card-text">Employee State Insurance providing socio-economic protection including medical care to workers and their families in the organized sector.</p>
+                                <div class="d-flex justify-content-between align-items-center mt-3">
+                                    <span class="text-muted">Eligibility: Organized sector workers</span>
+                                    <button class="btn btn-sm btn-outline-primary">Learn More</button>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Rashtriya Swasthya Bima Yojana -->
+                <div class="col-lg-4 col-md-6 mb-4" data-category="government insurance">
+                    <a href="scheme-rsby.html" class="text-decoration-none text-dark">
+                        <div class="card scheme-card shadow-sm h-100">
+                            <div class="badge-corner">
+                                <span class="badge bg-success">Government</span>
+                            </div>
+                            <div class="card-body text-center">
+                                <div class="scheme-icon">
+                                    <i class="fas fa-notes-medical"></i>
+                                </div>
+                                <h3 class="card-title">RSBY</h3>
+                                <p class="card-text">Rashtriya Swasthya Bima Yojana providing health insurance coverage for BPL families for hospitalization expenses up to ₹30,000 per annum.</p>
+                                <div class="d-flex justify-content-between align-items-center mt-3">
+                                    <span class="text-muted">Eligibility: BPL families</span>
+                                    <button class="btn btn-sm btn-outline-primary">Learn More</button>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Private Health Insurance -->
+                <div class="col-lg-4 col-md-6 mb-4" data-category="private insurance">
+                    <a href="scheme-private.html" class="text-decoration-none text-dark">
+                        <div class="card scheme-card shadow-sm h-100">
+                            <div class="badge-corner">
+                                <span class="badge bg-info">Private</span>
+                            </div>
+                            <div class="card-body text-center">
+                                <div class="scheme-icon">
+                                    <i class="fas fa-umbrella"></i>
+                                </div>
+                                <h3 class="card-title">Private Health Insurance</h3>
+                                <p class="card-text">Various private health insurance plans providing coverage for hospitalization, critical illness, and other medical expenses.</p>
+                                <div class="d-flex justify-content-between align-items-center mt-3">
+                                    <span class="text-muted">Eligibility: Anyone</span>
+                                    <button class="btn btn-sm btn-outline-primary">Learn More</button>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Assistance Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h2>Need Help Applying for These Schemes?</h2>
+                    <p class="lead">Our team can assist you in determining your eligibility and completing the application process for various healthcare schemes.</p>
+                    <p>Many people miss out on beneficial healthcare programs due to lack of awareness or difficulty navigating the application process. We're here to help make healthcare more accessible for you and your family.</p>
+                    <a href="index.html#contact" class="btn btn-primary">Get Assistance</a>
+                </div>
+                <div class="col-lg-6">
+                    <img src="images/assistance.svg" alt="Application assistance" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h4 class="mb-4"><i class="fas fa-heartbeat me-2"></i>CareConnect</h4>
+                    <p>Connecting people in need with healthcare resources, retired doctors, and NGOs to provide accessible healthcare support for everyone.</p>
+                    <div class="social-icons mt-3">
+                        <a href="#" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="mb-4">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html#home" class="text-white text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="index.html#services" class="text-white text-decoration-none">Services</a></li>
+                        <li class="mb-2"><a href="index.html#doctors" class="text-white text-decoration-none">Doctors</a></li>
+                        <li class="mb-2"><a href="schemes.html" class="text-white text-decoration-none">Schemes</a></li>
+                        <li class="mb-2"><a href="index.html#ngos" class="text-white text-decoration-none">NGOs</a></li>
+                        <li class="mb-2"><a href="index.html#donate" class="text-white text-decoration-none">Donate</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="mb-4">Resources</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Blog</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">FAQ</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Privacy Policy</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <h5 class="mb-4">Newsletter</h5>
+                    <p>Subscribe to our newsletter for updates on our services and healthcare resources.</p>
+                    <form class="mt-3">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Your email" required>
+                            <button class="btn btn-primary" type="submit">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2024 CareConnect. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Main JavaScript -->
+    <script src="js/data.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/app.js"></script>
+    
+    <!-- Schemes specific script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check user login status
+            checkUserLoginStatus();
+            
+            // Search and filter functionality
+            const searchInput = document.getElementById('scheme-search');
+            const filterSelect = document.getElementById('scheme-filter');
+            const searchBtn = document.getElementById('search-btn');
+            const schemeCards = document.querySelectorAll('#schemes-grid > div');
+            
+            searchBtn.addEventListener('click', filterSchemes);
+            searchInput.addEventListener('keyup', function(e) {
+                if (e.key === 'Enter') filterSchemes();
+            });
+            
+            function filterSchemes() {
+                const searchTerm = searchInput.value.toLowerCase();
+                const filterValue = filterSelect.value;
+                
+                schemeCards.forEach(card => {
+                    const cardText = card.textContent.toLowerCase();
+                    const cardCategories = card.dataset.category;
+                    
+                    const matchesSearch = searchTerm === '' || cardText.includes(searchTerm);
+                    const matchesFilter = filterValue === 'all' || cardCategories.includes(filterValue);
+                    
+                    if (matchesSearch && matchesFilter) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html> 

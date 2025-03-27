@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Port 5500 API Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .container { max-width: 600px; margin: 0 auto; }
+        .card { border: 1px solid #ddd; border-radius: 8px; padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .btn { background: #4CAF50; color: white; border: none; padding: 10px 15px; border-radius: 4px; cursor: pointer; }
+        .btn:hover { background: #45a049; }
+        pre { background: #f5f5f5; padding: 10px; border-radius: 4px; overflow: auto; }
+        .error { color: #dc3545; }
+        .success { color: #28a745; }
+        input, button { margin: 5px 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Port 5500 API Test</h1>
+        <p>This page runs on port 5500 and tests connection to the API server at 127.0.0.1:3000</p>
+        
+        <div class="card">
+            <h2>Server Information</h2>
+            <p>Frontend URL: <span id="frontend-url"></span></p>
+            <p>API Server URL: <span>http://127.0.0.1:3000/api</span></p>
+            <button id="test-connection" class="btn">Test Connection</button>
+            <div id="connection-result"></div>
+        </div>
+
+        <div class="card">
+            <h2>Register User</h2>
+            <form id="register-form">
+                <div>
+                    <label for="name">Name:</label><br>
+                    <input type="text" id="name" value="Test User" style="width: 100%">
+                </div>
+                <div>
+                    <label for="email">Email:</label><br>
+                    <input type="email" id="email" value="test@example.com" style="width: 100%">
+                </div>
+                <div>
+                    <label for="password">Password:</label><br>
+                    <input type="password" id="password" value="password123" style="width: 100%">
+                </div>
+                <button type="submit" class="btn" style="margin-top: 10px">Register</button>
+            </form>
+            <div id="register-result"></div>
+        </div>
+    </div>
+
+    <script>
+        // Display current URL
+        document.getElementById('frontend-url').textContent = window.location.href;
+        
+        // API URL
+        const API_URL = 'http://127.0.0.1:3000/api';
+        
+        // Test connection
+        document.getElementById('test-connection').addEventListener('click', async function() {
+            const resultDiv = document.getElementById('connection-result');
+            resultDiv.innerHTML = '<p>Testing connection...</p>';
+            
+            try {
+                // Using fetch with no-cors mode as a fallback if regular fetch fails
+                const response = await fetch(`${API_URL}/auth/register`, {
+                    method: 'OPTIONS',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    mode: 'cors'
+                });
+                
+                resultDiv.innerHTML = `
+                    <p class="success">Connection successful!</p>
+                    <pre>
+Status: ${response.status}
+Status Text: ${response.statusText}
+Headers: ${JSON.stringify(Object.fromEntries([...response.headers]), null, 2)}
+                    </pre>
+                `;
+            } catch (error) {
+                resultDiv.innerHTML = `
+                    <p class="error">Connection failed: ${error.message}</p>
+                    <p>Troubleshooting tips:</p>
+                    <ul>
+                        <li>Make sure the server is running at port 3000</li>
+                        <li>Check that CORS is configured properly on the server</li>
+                        <li>Try opening a terminal and run: curl -X OPTIONS http://127.0.0.1:3000/api/auth/register</li>
+                    </ul>
+                `;
+                console.error('Connection test failed:', error);
+            }
+        });
+        
+        // Register form
+        document.getElementById('register-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            const resultDiv = document.getElementById('register-result');
+            resultDiv.innerHTML = '<p>Sending registration request...</p>';
+            
+            try {
+                console.log('Sending registration request with data:', { name, email, password });
+                
+                const response = await fetch(`${API_URL}/auth/register`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ name, email, password }),
+                    mode: 'cors'
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok) {
+                    resultDiv.innerHTML = `
+                        <p class="success">Registration successful!</p>
+                        <pre>${JSON.stringify(data, null, 2)}</pre>
+                    `;
+                } else {
+                    resultDiv.innerHTML = `
+                        <p class="error">Registration failed with status ${response.status}</p>
+                        <pre>${JSON.stringify(data, null, 2)}</pre>
+                    `;
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `
+                    <p class="error">Registration error: ${error.message}</p>
+                    <pre>${error.stack || 'No stack trace available'}</pre>
+                `;
+                console.error('Registration error:', error);
+            }
+        });
+    </script>
+</body>
+</html> 
